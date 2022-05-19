@@ -1,0 +1,42 @@
+
+
+To generate the ssh key:
+    ssh-keygen -t rsa -C "youremail@gmail.com"
+    
+    The shell will ask you to give the path of file/folder where the ssh key needs to be located, then give the full path like: C:\Users\regmi/.ssh/id_ragasimger123
+
+Then run this command
+    ssh-add C:\Users\regmi/.ssh/id_ragasimger123
+
+    The identity needs to be added.
+
+    In case of this error:
+
+    "Error connecting to agent: No such file or directory"
+        Run the command on git bash shell:
+            eval "$(ssh-agent)"
+
+
+
+
+And add the config(without any file extension) file like this:
+
+# ReverseEra
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_rsa
+
+# RagasImger
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ragasimger
+
+
+# RagasImger123
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ragasimger123
+
